@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<code-table>
+    <name>topic-category-code</name>
+    <items>
+        <item>
+            <label>Historic Event</label>
+            <value>historic-event</value>
+        </item>
+        <item>
+            <label>Office News</label>
+            <value>office-news</value>
+        </item>
+        <item>
+            <label>Publication</label>
+            <value>publication</value>
+        </item>
+    </items>
+</code-table>
