@@ -3,6 +3,8 @@
     <topic-id>64</topic-id>
     <topic-id>63</topic-id>
     <topic-id>62</topic-id>
+    <!-- limit to 3 on current hsg-shell -->
+    <!--
     <topic-id>61</topic-id>
     <topic-id>60</topic-id>
     <topic-id>59</topic-id>
@@ -10,4 +12,5 @@
     <topic-id>57</topic-id>
     <topic-id>56</topic-id>
     <topic-id>55</topic-id>
+    -->
 </display-order>
