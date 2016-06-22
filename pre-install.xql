@@ -30,7 +30,7 @@ declare function local:mkcol($collection, $path) {
 (: store the collection configuration :)
 local:mkcol("/db/system/config", ($target, "data"))
 ,
-for $xconf in file:directory-list(concat($dir, "/data"), "*.xconf")/file:file/@name
+for $xconf in file:directory-list($dir, "*.xconf")/file:file/@name
 let $data-dir := substring-before($xconf, ".xconf")
 return
     (
