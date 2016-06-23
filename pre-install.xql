@@ -1,4 +1,4 @@
-xquery version "1.0";
+xquery version "3.0";
 
 import module namespace xdb="http://exist-db.org/xquery/xmldb";
 
@@ -27,18 +27,9 @@ declare function local:mkcol($collection, $path) {
     local:mkcol-recursive($collection, tokenize($path, "/"))
 };
 
+
 (: store the collection configuration :)
-local:mkcol("/db/system/config", ($target, "data"))
-,
-for $xconf in file:directory-list($dir, "*.xconf")/file:file/@name
-let $data-dir := substring-before($xconf, ".xconf")
-return
-    (
-    local:mkcol-recursive(concat("/db/system/config/", $target), ("data", $data-dir))
-    ,
-    xmldb:store-files-from-pattern(
-        concat("/db/system/config", $target, "/data/", $data-dir), 
-        concat($dir, "/data"), 
-        $xconf
-        )
-    )
+local:mkcol("/db/system/config", $target),
+
+(: store the replication configuration :)
+xmldb:store-files-from-pattern("/db/system/config" || $target,  $dir, "collection.xconf")
