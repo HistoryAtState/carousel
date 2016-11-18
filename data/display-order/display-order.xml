@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <display-order>
     <!-- homepage carousel items appear in this order -->
+    <topic-id>76</topic-id>
     <topic-id>75</topic-id>
     <topic-id>74</topic-id>
-    <topic-id>73</topic-id>
+    
   
 <!-- limit to 3 on current hsg-shell -->
     <!--
