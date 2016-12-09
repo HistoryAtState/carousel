@@ -1,0 +1,27 @@
+default namespace = ""
+
+start =
+    element topic {
+        element id { xsd:integer },
+        element type { xsd:NCName },
+        element title { (text | em)+ },
+        element body {
+            (text
+             | em
+             | element a {
+                   attribute href { xsd:anyURI },
+                   xsd:NCName
+               })+
+        },
+        element link { xsd:anyURI },
+        element image { xsd:anyURI },
+        element image-description { (text | em)+ },
+        element image-height { xsd:integer },
+        element image-width { xsd:integer },
+        element image-source-information { text },
+        element created-by { xsd:NCName },
+        element created-datetime { xsd:dateTime },
+        element last-modified-by { xsd:NCName },
+        element last-modified-datetime { xsd:dateTime }
+    }
+em = element em { text }
