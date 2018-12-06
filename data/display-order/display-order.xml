@@ -1,23 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <display-order>
     <!-- homepage carousel items appear in this order -->
+    <!-- limited to 3 on current hsg-shell -->
+    <topic-id>101</topic-id>
     <topic-id>100</topic-id>
     <topic-id>99</topic-id>
-    <topic-id>98</topic-id>
-
-
-    <!-- limit to 3 on current hsg-shell -->
-    <!--
-    <topic-id>64</topic-id>
-    <topic-id>65</topic-id>
-    <topic-id>63</topic-id>
-    <topic-id>62</topic-id>
-    <topic-id>61</topic-id>
-    <topic-id>60</topic-id>
-    <topic-id>59</topic-id>
-    <topic-id>58</topic-id>
-    <topic-id>57</topic-id>
-    <topic-id>56</topic-id>
-    <topic-id>55</topic-id>
-    -->
 </display-order>
