@@ -3,9 +3,14 @@
     <id>89</id>
     <type>publication</type>
     <title>Search and Sort <em>Foreign Relations</em> Documents by Date</title>
-    <body>The most frequently requested feature by users of the Office of the Historian website is now here: Readers can search the <em>Foreign Relations</em> series by date and sort search results chronologically. The new search interface allows users to leverage a combination of keywords, date ranges, and volume-based filtering to enhance their <em>FRUS</em> research experience. These features have been released at an early “alpha” stage of development to gather feedback.</body>
+    <body>The most frequently requested feature by users of the Office of the Historian website is
+        now here: Readers can search the <em>Foreign Relations</em> series by date and sort search
+        results chronologically. The new search interface allows users to leverage a combination of
+        keywords, date ranges, and volume-based filtering to enhance their <em>FRUS</em> research
+        experience. These features have been released at an early “alpha” stage of development to
+        gather feedback.</body>
     <link>/search</link>
-    <image>https://s3.amazonaws.com/static.history.state.gov/carousel/date-search.png</image>
+    <image>https://static.history.state.gov/carousel/date-search.png</image>
     <image-description>Screenshot of New Search Interface</image-description>
     <image-height>600</image-height>
     <image-width>400</image-width>
