@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <display-order>
     <!-- homepage carousel items appear in this order -->
     <!-- limited to 3 on current hsg-shell -->
+    <topic-id>102</topic-id>
     <topic-id>101</topic-id>
     <topic-id>100</topic-id>
-    <topic-id>99</topic-id>
 </display-order>
