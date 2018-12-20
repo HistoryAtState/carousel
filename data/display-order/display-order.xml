@@ -2,7 +2,7 @@
 <display-order>
     <!-- homepage carousel items appear in this order -->
     <!-- limited to 3 on current hsg-shell -->
+    <topic-id>104</topic-id>
     <topic-id>103</topic-id>
     <topic-id>102</topic-id>
-    <topic-id>101</topic-id>
 </display-order>
