@@ -8,4 +8,11 @@
                 not match filename “<value-of select="$basename"/>”</assert>
         </rule>
     </pattern>
+    
+    <pattern>
+        <rule context="body">
+            <let name="length" value=". => normalize-space() => string-length()"/>
+            <assert test="$length le 450" role="warn">The body is too long, at <value-of select="$length"/> characters. Reduce it to 450 characters to fit into the available space on the web page.</assert>
+        </rule>
+    </pattern>
 </schema>
