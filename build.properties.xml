@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <app>
+        <name>carousel</name>
+        <version>0.3</version>
+    </app>
+    <trigger>
+        <provider-url>
+            failover:tcp://10.0.1.131:61616
+        </provider-url>
+        <destination>
+            dynamicTopics/hsg-replication
+        </destination>
+    </trigger>
+</root>

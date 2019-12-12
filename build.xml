@@ -1,19 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="xar" name="carousel">
+    <xmlproperty file="build.properties.xml" semanticAttributes="true" keepRoot="false"/>
     <xmlproperty file="expath-pkg.xml"/>
     <property name="project.version" value="${package(version)}"/>
     <property name="project.app" value="${package(abbrev)}"/>
     <property name="build.dir" value="build"/>
-    <target name="xar">
-        <mkdir dir="${build.dir}"/>
-        <zip basedir="." destfile="${build.dir}/${project.app}-${project.version}.xar"
-            excludes="${build.dir}/*"/>
-    </target>
+
     <target name="clean">
+        <echo message="Deleting xar files..."/>
         <delete quiet="true">
             <fileset dir="${build.dir}">
                 <include name="*.xar"/>
             </fileset>
         </delete>
+        <mkdir dir="${build.dir}"/>
     </target>
+
+    <target name="copy">
+        <echo message="Copying the files to the build folder..."/>
+        <copy todir="${build.dir}/${app.name}-${app.version}">
+            <fileset dir="${basedir}">
+                <exclude name="${build.dir}/**"/>
+                <exclude name="**/*.repl"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="copy-with-replication-trigger">
+        <echo message="Copying the files to the build folder..."/>
+        <copy todir="${build.dir}/${app.name}-${app.version}">
+            <fileset dir="${basedir}">
+                <exclude name="${build.dir}/**"/>
+                <exclude name="collection.xconf"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="apply-filters">
+        <echo message="Running task 'apply filters': Copying the values for collection.xconf..."/>
+        <copy todir="${build.dir}/${app.name}-${app.version}" overwrite="true" verbose="true">
+            <fileset file="collection.xconf.tmpl"/>
+            <filterset>
+                <filter token="provider-url" value="${trigger.provider-url}"/>
+                <filter token="destination" value="${trigger.destination}"/>
+            </filterset>
+            <globmapper from="*.tmpl" to="*"/>
+        </copy>
+    </target>
+
+    <target name="xar" depends="clean" description="main target to create application XAR files">
+        <antcall target="copy"/>
+        <echo message="Creating '1991' xar package..."/>
+        <zip basedir="." destfile="${build.dir}/${project.app}-${project.version}-1991.xar">
+            <exclude name="${build.dir}/**"/>
+            <exclude name="**/*.tmpl"/>
+        </zip>
+        <antcall target="copy-with-replication-trigger"/>
+        <antcall target="apply-filters"/>
+        <echo message="Creating '1861' xar package containing triggers..."/>
+        <zip basedir="${build.dir}/${app.name}-${app.version}" destfile="${build.dir}/${app.name}-${app.version}-1861.xar">
+            <exclude name="**/*.tmpl"/>
+        </zip>
+    </target>
+
 </project>
