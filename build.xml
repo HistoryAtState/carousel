@@ -39,6 +39,7 @@
             <filterset>
                 <filter token="name" value="${app.name}"/>
                 <filter token="version" value="${app.version}"/>
+                <filter token="url" value="${app.url}"/>
                 <filter token="title" value="${app.title}"/>
             </filterset>
             <globmapper from="*.tmpl" to="*"/>
