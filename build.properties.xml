@@ -3,7 +3,7 @@
     <app>
         <name>carousel</name>
         <title>Carousel (data)</title>
-        <version>0.4</version>
+        <version>0.5</version>
     </app>
     <trigger>
         <provider-url>
