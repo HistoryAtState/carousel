@@ -2,14 +2,17 @@
 <root>
     <app>
         <name>carousel</name>
-        <version>0.3</version>
+        <title>Carousel (data)</title>
+        <version>0.4</version>
     </app>
     <trigger>
         <provider-url>
-            failover:tcp://10.0.1.131:61616
+            <dev>failover:tcp://10.0.1.114:61616</dev>
+            <prod>failover:tcp://10.0.1.131:61616</prod>
         </provider-url>
         <destination>
-            dynamicTopics/hsg-replication
+            <dev>dynamicTopics/hsg-replication</dev>
+            <prod>dynamicTopics/hsg-replication</prod>
         </destination>
     </trigger>
 </root>
