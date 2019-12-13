@@ -5,11 +5,7 @@
 
     <target name="clean">
         <echo message="Deleting xar files..."/>
-        <delete quiet="true">
-            <fileset dir="${build.dir}">
-                <include name="*.xar"/>
-            </fileset>
-        </delete>
+        <delete dir="${build.dir}"/>
         <mkdir dir="${build.dir}"/>
     </target>
 
@@ -56,6 +52,7 @@
                 <filter token="destination" value="${trigger.destination.dev}"/>
                 <filter token="name" value="${app.name}"/>
                 <filter token="version" value="${app.version}"/>
+                <filter token="url" value="${app.url}"/>
                 <filter token="title" value="${app.title}"/>
             </filterset>
             <globmapper from="*.tmpl" to="*"/>
@@ -72,6 +69,7 @@
                 <filter token="destination" value="${trigger.destination.prod}"/>
                 <filter token="name" value="${app.name}"/>
                 <filter token="version" value="${app.version}"/>
+                <filter token="url" value="${app.url}"/>
                 <filter token="title" value="${app.title}"/>
             </filterset>
             <globmapper from="*.tmpl" to="*"/>
@@ -100,6 +98,7 @@
         <zip basedir="${build.dir}/${app.name}-${app.version}" destfile="${build.dir}/${app.name}-${app.version}-producer.xar">
             <exclude name="**/*.tmpl"/>
         </zip>
+        <delete dir="${build.dir}/${app.name}-${app.version}"/>
     </target>
 
     <target name="xar-prod" depends="clean" description="target to create application XAR files for PROD environment">
@@ -123,8 +122,10 @@
         <echo message="------------------------------------------------------------"/>
 
         <zip basedir="${build.dir}/${app.name}-${app.version}" destfile="${build.dir}/${app.name}-${app.version}-producer.xar">
+            <exclude name="${build.dir}/**"/>
             <exclude name="**/*.tmpl"/>
         </zip>
+        <delete dir="${build.dir}/${app.name}-${app.version}"/>
     </target>
 
     <target name="xar" depends="clean" description="main target to create application XAR files">
@@ -138,6 +139,7 @@
             <exclude name="${build.dir}/**"/>
             <exclude name="**/*.tmpl"/>
         </zip>
+        <delete dir="${build.dir}/${app.name}-${app.version}"/>
     </target>
 
 </project>
