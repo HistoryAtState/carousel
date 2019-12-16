@@ -4,7 +4,7 @@
         <name>carousel</name>
         <title>Carousel (data)</title>
         <url>http://history.state.gov/ns/apps/carousel</url>
-        <version>0.7</version>
+        <version>0.8</version>
     </app>
     <trigger>
         <provider-url>
