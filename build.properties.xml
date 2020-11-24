@@ -5,15 +5,5 @@
         <title>Carousel (data)</title>
         <url>http://history.state.gov/ns/apps/carousel</url>
         <version>0.8</version>
-    </app>
-    <trigger>
-        <provider-url>
-            <dev>failover:tcp://10.0.1.114:61616</dev>
-            <prod>failover:tcp://10.0.1.131:61616</prod>
-        </provider-url>
-        <destination>
-            <dev>dynamicTopics/hsg-replication</dev>
-            <prod>dynamicTopics/hsg-replication</prod>
-        </destination>
-    </trigger>
+    </app>   
 </root>
