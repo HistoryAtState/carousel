@@ -1,0 +1,23 @@
+.github/dependabot.yml
+  s_504000266682ed::t_e8f332b27b2a7c 27-33
+package-lock.json
+  s_504000266682ed::t_f25d65510eb8db 14,140-152,1814-1816,1820,1823
+package.json
+  s_504000266682ed::t_91327af6a715c8 15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f19a9fd057b5737904f5837aecfbf35d503df410",
+  "prompts": {},
+  "sessions": {
+    "s_504000266682ed": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "af4a79df-e25f-449c-9507-58e07eedeb23",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "duncdrum <d.paterson@me.com>"
+    }
+  }
+}
